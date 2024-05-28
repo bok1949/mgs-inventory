@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inventory</title>
     {{-- bootstrap link --}}
+
     {{-- css layout --}}
     {{-- css natin --}}
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 </head>
 <body>
     {{-- header nav bar --}}
