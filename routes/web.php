@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 
+Route::get('/', [InventoryPageController::class, 'dashboard']);
+
 Route::prefix('/inventory')->group(function () {
-    Route::get('/', [InventoryPageController::class, 'dashboard']);
+    Route::get('/', [InventoryPageController::class, 'dashboard'])->name('invetory-dashboard');
     Route::get('/show', [InventoryPageController::class, 'show']);
     Route::get('/edit/{id}', [InventoryPageController::class, 'edit']);
 });
