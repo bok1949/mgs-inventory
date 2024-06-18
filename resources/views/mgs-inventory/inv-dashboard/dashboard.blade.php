@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                             <div class="stats-icon purple mb-2">
-                                <div class="icon dripicons dripicons-view-list-large"></div>
+                                <div><i class="bi bi-card-list"></i></div>
                             </div>
                         </div>
                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                             <div class="stats-icon blue mb-2">
-                                <div class="icon dripicons dripicons-tags"></div>
+                                <div><i class="bi bi-tag"></i></div>
                             </div>
                         </div>
                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
@@ -46,7 +46,7 @@
                     <div class="row">
                         <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                             <div class="stats-icon blue mb-2">
-                                <span class="fa-fw select-all fas"></span>
+                                <div><i class="bi bi-buildings"></i></div>
                             </div>
                         </div>
                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
@@ -63,7 +63,7 @@
                     <div class="row">
                         <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                             <div class="stats-icon red mb-2">
-                                <div class="icon dripicons dripicons-box"></div>
+                                <div><i class="bi bi-box2"></i></div>
                             </div>
                         </div>
                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">

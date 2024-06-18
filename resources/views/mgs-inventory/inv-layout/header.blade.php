@@ -56,10 +56,6 @@
                         <div class="submenu-group-wrapper">
                             <ul class="submenu-group">
                                 <li class="submenu-item has-sub">
-                                    <a href="#" class='submenu-link'>Manage Stock</a>
-                                    @include('mgs-inventory/inv-layout/stock-management-submenu')
-                                </li>
-                                <li class="submenu-item has-sub">
                                     <a href="#" class='submenu-link'>Manage Category</a>
                                     @include('mgs-inventory/inv-layout/category-management-submenu')
                                 </li>
@@ -68,65 +64,44 @@
                                     @include('mgs-inventory/inv-layout/supplier-management-submenu')
                                 </li>
                                 <li class="submenu-item has-sub">
-                                    <a href="#" class='submenu-link'>Manage Brand</a>
-                                    @include('mgs-inventory/inv-layout/brand-management-submenu')
+                                    <a href="#" class='submenu-link'>Manage Stock</a>
+                                    @include('mgs-inventory/inv-layout/stock-management-submenu')
                                 </li>
                                 <li class="submenu-item has-sub">
                                     <a href="#" class='submenu-link'>Manage Stock Level</a>
                                     @include('mgs-inventory/inv-layout/stocklevel-management-submenu')
                                 </li>
-                                {{-- <li class="submenu-item  ">
-                                    <a href="{{ route('create-stock-index') }}" class='submenu-link'>Create Stock</a>
-                                </li> --}}
                             </ul>
                         </div>
                     </div>
                 </li> {{-- end of stock management --}}
 
-                {{-- Stock monitoring management --}}
-                {{-- <li class="menu-item  has-sub">
+                {{-- Brand management --}}
+                <li class="menu-item has-sub">
                     <a href="#" class='menu-link'>
-                        <span><i class="bi bi-file-earmark-medical-fill"></i> Stock Monitoring Management</span>
+                        <span><i class="bi bi-tag"></i>Brand Management</span>
                     </a>
                     <div class="submenu ">
                         <!-- Wrap to submenu-group-wrapper if you want 3-level submenu. Otherwise remove it. -->
-                        <div class="submenu-group-wrapper">
+                        <div class="">
                             <ul class="submenu-group">
-                                <li class="submenu-item">
-                                    <a href="#" class='submenu-link'>Stock list (level)</a>
+                                <li class="submenu-item  ">
+                                    <a href="#" class='submenu-link'>Brand List</a>
+                                </li>
+                                <li class="submenu-item  ">
+                                    <a href="#" class='submenu-link'>Create Brand</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                </li> --}} {{-- end of Stock monitoring management --}}
+                </li> {{-- end of Brand management --}}
 
-                {{-- Category management --}}
-                {{-- <li class="menu-item  has-sub">
-                    <a href="#" class='menu-link'>
-                        <span><i class="bi bi-file-earmark-medical-fill"></i> Category Management</span>
-                    </a>
-                    <div class="submenu ">
-                        <!-- Wrap to submenu-group-wrapper if you want 3-level submenu. Otherwise remove it. -->
-                        <div class="submenu-group-wrapper">
-                            <ul class="submenu-group">
-                                <li class="submenu-item">
-                                    <li class="submenu-item  ">
-                                        <a href="{{ route('category-list-index') }}" class='submenu-link'>Category List</a>
-                                    </li>
-                                    <li class="submenu-item  ">
-                                        <a href="{{ route('create-category-index') }}" class='submenu-link'>Create Create</a>
-                                    </li>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>  --}}{{-- end of category management --}}
-
-                <li class="menu-item active has-sub">
+                {{-- Project management --}}
+                <li class="menu-item has-sub">
                     <a href="#" class='menu-link'>
                         <span><i class="bi bi-grid-1x2-fill"></i> Project Management</span>
                     </a>
-                    <div class="submenu">
+                    <div class="submenu" @style(['max-width: 100%', 'min-width: 150%'])>
                         <!-- Wrap to submenu-group-wrapper if you want 3-level submenu. Otherwise remove it. -->
                         <div class="">
                             <ul class="submenu-group">
@@ -147,7 +122,7 @@
                             </ul>
                         </div>
                     </div>
-                </li>
+                </li>{{-- End of project Management --}}
             </ul>
         </div>
     </nav>
