@@ -25,8 +25,11 @@ Route::prefix('/inventory')->group(function () {
     Route::get('/', [InventoryPageController::class, 'dashboard'])->name('invetory-dashboard');
     Route::get('/stock-list', [InventoryPageController::class, 'stockList'])->name('stock-list');
     Route::get('/create-stock', [InventoryPageController::class, 'createStock'])->name('create-stock-index');
-    Route::get('/show', [InventoryPageController::class, 'show']);
-    Route::get('/edit/{id}', [InventoryPageController::class, 'edit']);
+
+    Route::get('/category-list-index', [InventoryPageController::class, 'categoryListIndex'])->name('category-list-index');
+    Route::get('/create-category-index', [InventoryPageController::class, 'createCategoryIndex'])->name('create-category-index');
+    
+    
 });
 
 

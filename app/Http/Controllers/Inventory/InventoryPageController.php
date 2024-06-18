@@ -25,13 +25,13 @@ class InventoryPageController extends Controller
 
     }
 
-    public function show()
+    public function categoryListIndex()
     {
-        return "show";
+        return view('mgs-inventory.category-management.categoryListIndex');
     }
 
-    public function edit($id)
+    public function createCategoryIndex()
     {
-        return "edit " . $id;
+        return view('mgs-inventory.category-management.createCategoryIndex');
     }
 }
