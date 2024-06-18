@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\InventoryPageController;
+use App\Http\Controllers\Inventory\InventoryPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +23,8 @@ Route::get('/', [InventoryPageController::class, 'dashboard']);
 
 Route::prefix('/inventory')->group(function () {
     Route::get('/', [InventoryPageController::class, 'dashboard'])->name('invetory-dashboard');
+    Route::get('/stock-list', [InventoryPageController::class, 'stockList'])->name('stock-list');
+    Route::get('/create-stock', [InventoryPageController::class, 'createStock'])->name('create-stock-index');
     Route::get('/show', [InventoryPageController::class, 'show']);
     Route::get('/edit/{id}', [InventoryPageController::class, 'edit']);
 });

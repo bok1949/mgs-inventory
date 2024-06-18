@@ -18,11 +18,17 @@
     
     <link rel="stylesheet" href="{{ URL::asset('new-assets/compiled/css/app.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('new-assets/compiled/css/iconly.css')}}">
+    <link rel="stylesheet" href="{{ URL::asset('new-assets/compiled/css/app-dark.css')}}">
+
+    <link rel="stylesheet" href="{{ URL::asset('new-assets/extensions/@icon/dripicons/dripicons.css')}}">
+    <link rel="stylesheet" href="{{ URL::asset('new-assets/extensions/@fortawesome/fontawesome-free/css/all.min.css')}}">
+    
     <link rel="stylesheet" href="{{ URL::asset('assets/css/custom.css')}}">
     
 
 </head>
 <body>
+    <script src="{{ URL::asset('new-assets/static/js/initTheme.js')}}"></script>
     {{-- header nav bar --}}
     {{-- <header>Header</header> --}}
 
@@ -52,7 +58,7 @@
         </div>
 
         {{-- Footer --}}
-        @include('mgs-inventory/inv-layout/header')
+        @include('mgs-inventory/inv-layout/footer')
     </div>
 </div>
     
@@ -62,10 +68,10 @@
     <script src="{{ URL::asset('assets/static/js/components/dark.js')}}"></script>
     <script src="{{ URL::asset('new-assets/static/js/pages/horizontal-layout.js')}}"></script>
     <script src="{{ URL::asset('new-assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-
-
+    
+    
     <script src="{{ URL::asset('new-assets/compiled/js/app.js')}}"></script>
-
+    
 
 
     <!-- Need: Apexcharts -->

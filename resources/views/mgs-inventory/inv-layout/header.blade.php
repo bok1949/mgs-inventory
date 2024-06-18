@@ -41,13 +41,13 @@
     <nav class="main-navbar">
         <div class="container">
             <ul>
-                <li class="menu-item  active">
-                    <a href="index.html" class='menu-link'>
+                <li class="menu-item">
+                    <a href="{{ route('invetory-dashboard') }}" class='menu-link'>
                         <span><i class="bi bi-grid-fill"></i> Dashboard</span>
                     </a>
                 </li>
 
-                <li class="menu-item  has-sub">
+                <li class="menu-item has-sub">
                     <a href="#" class='menu-link'>
                         <span><i class="bi bi-stack"></i> Stock Mangement</span>
                     </a>
@@ -56,7 +56,26 @@
                         <div class="submenu-group-wrapper">
                             <ul class="submenu-group">
                                 <li class="submenu-item  ">
-                                    <a href="component-alert.html" class='submenu-link'>Stock List</a>
+                                    <a href="{{ route('stock-list') }}" class='submenu-link'>Stock List</a>
+                                </li>
+                                <li class="submenu-item  ">
+                                    <a href="{{ route('create-stock-index') }}" class='submenu-link'>Create Stock</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="menu-item  has-sub">
+                    <a href="#" class='menu-link'>
+                        <span><i class="bi bi-file-earmark-medical-fill"></i> Stock Monitoring Management</span>
+                    </a>
+                    <div class="submenu ">
+                        <!-- Wrap to submenu-group-wrapper if you want 3-level submenu. Otherwise remove it. -->
+                        <div class="submenu-group-wrapper">
+                            <ul class="submenu-group">
+                                <li class="submenu-item">
+                                    <a href="#" class='submenu-link'>Stock list (level)</a>
                                 </li>
                             </ul>
                         </div>
@@ -84,22 +103,6 @@
                                 </li>
                                 <li class="submenu-item  ">
                                     <a href="layout-rtl.html" class='submenu-link'>Manpower Profiling</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="menu-item  has-sub">
-                    <a href="#" class='menu-link'>
-                        <span><i class="bi bi-file-earmark-medical-fill"></i> Stock Monitoring Management</span>
-                    </a>
-                    <div class="submenu ">
-                        <!-- Wrap to submenu-group-wrapper if you want 3-level submenu. Otherwise remove it. -->
-                        <div class="submenu-group-wrapper">
-                            <ul class="submenu-group">
-                                <li class="submenu-item">
-                                    <a href="#" class='submenu-link'>Stock list (level)</a>
                                 </li>
                             </ul>
                         </div>

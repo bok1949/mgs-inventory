@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Inventory;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class InventoryPageController extends Controller
@@ -11,6 +12,17 @@ class InventoryPageController extends Controller
     {
         // return "Testign";
         return view('mgs-inventory.inv-dashboard.dashboard');
+    }
+
+    public function stockList()
+    {
+        return view('mgs-inventory.stock-management.stockList');
+    }
+
+    public function createStock()
+    {
+        return view('mgs-inventory.stock-management.createStock');
+
     }
 
     public function show()
