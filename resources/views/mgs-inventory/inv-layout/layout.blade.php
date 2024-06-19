@@ -25,17 +25,11 @@
     
     <link rel="stylesheet" href="{{ URL::asset('assets/css/custom.css')}}">
     
+    @stack('style-per-page')
+    @livewireStyles
 
 </head>
 <body>
-    <script src="{{ URL::asset('new-assets/static/js/initTheme.js')}}"></script>
-    {{-- header nav bar --}}
-    {{-- <header>Header</header> --}}
-
-    {{-- main --}}
-    {{-- <div class="page-content">
-        @yield('page-content')
-    </div> --}}
 
 <div id="app">
     <div id="main" class="layout-horizontal">
@@ -62,6 +56,8 @@
     </div>
 </div>
     
+
+    @livewireScripts
 
     {{-- JavaScript --}}
     <script src="{{ URL::asset('new-assets/extensions/jquery/jquery.min.js')}}"></script>
