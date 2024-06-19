@@ -1,4 +1,14 @@
 <div>
+    <div>
+        Id:
+        {{$id}}
+    </div>
+    
+    <div>
+        Name:
+        {{$categoryName}}
+    </div>
+
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 col-xxl-12">
             {{-- create filters and search categories here --}}
@@ -9,32 +19,28 @@
         <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="data-table-wrapper">
                 <table class="table">
-                    <thead>
+                    <thead> 
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Id</th>
+                            <th scope="col">Category Name</th>
+                            <th scope="col">Note</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($categories as $category)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>{{ $category->id }}</td>
+                            <td>{{ $category->category_name }}</td>
+                            <td>{{ $category->note }}</td>
+                            <td>
+                                <div class="d-flex align-items-center gap-3 justify-content-betweeen">
+                                    <button wire:click="showId({{$category->id}})"><i class="bi bi-trash text-danger"></i></button>
+                                    <i class="bi bi-pen"></i>
+                                </div>
+                            </td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -61,7 +61,7 @@
 
     {{-- JavaScript --}}
     <script src="{{ URL::asset('new-assets/extensions/jquery/jquery.min.js')}}"></script>
-    <script src="{{ URL::asset('assets/static/js/components/dark.js')}}"></script>
+    {{-- <script src="{{ URL::asset('assets/static/js/components/dark.js')}}"></script> --}}
     <script src="{{ URL::asset('new-assets/static/js/pages/horizontal-layout.js')}}"></script>
     <script src="{{ URL::asset('new-assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     
