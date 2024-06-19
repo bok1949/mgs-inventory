@@ -40,8 +40,12 @@
                                 <td>{{ $product->product_name }}</td>
                                 <td>{{ $product->description }}</td>
                                 <td>
-                                    <a href="#">Details</a> |
-                                    <a href="#">Edit</a>
+                                    <a href="#">
+                                        <i class="bi bi-eye"></i>
+                                    </a> |
+                                    <a href="#">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
                                 </td>
                             </tr>
                         @empty
