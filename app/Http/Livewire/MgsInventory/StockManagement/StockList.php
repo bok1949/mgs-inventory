@@ -19,10 +19,10 @@ class StockList extends Component
     {
         $allProducts = Product::orderBy('product_name', 'asc')
             ->select(
-                'product_id AS productId',
+                'id AS productId',
                 'product_code',
                 'product_name',
-                'product_desription'
+                'description'
             );
 
         /** search */
@@ -30,7 +30,7 @@ class StockList extends Component
             $allProducts->orWhere('product_name', 'like', '%' . $this->searchProduct . '%');
         }
 
-        $products = $allProducts->paginate(2);
+        $products = $allProducts->paginate(25);
 
         return view('livewire.mgs-inventory.stock-management.stock-list', [
             'products' => $products

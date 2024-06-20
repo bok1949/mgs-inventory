@@ -27,6 +27,7 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            <th scope="col">#</th>
                             <th scope="col">Product code</th>
                             <th scope="col">Product name</th>
                             <th scope="col">Description</th>
@@ -34,8 +35,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $total = $products->total();
+                            $currentPage = $products->currentPage();
+                            $perPage = $products->perPage();
+                            
+                            $from = ($currentPage - 1) * $perPage + 1;
+                            $to = min($currentPage * $perPage, $total);
+                                                        
+                            $counter = $from;
+                        @endphp
                         @forelse ($products as $product)
                             <tr>
+                                <td>{{ $counter }}</td>
                                 <td>{{ $product->product_code }}</td>
                                 <td>{{ $product->product_name }}</td>
                                 <td>{{ $product->description }}</td>
@@ -48,6 +60,9 @@
                                     </a>
                                 </td>
                             </tr>
+                            @php
+                                $counter++;
+                            @endphp
                         @empty
                             <tr>
                                 <th colspan="4">
@@ -66,7 +81,9 @@
 
     <div class="row">
         <div class="col d-flex justify-content-start align-items-center">
-            <strong>Total: </strong> &nbsp; {{ $products->total() }}
+            Showing &nbsp;<strong>{{ $from }}</strong> 
+            &nbsp;to&nbsp; <strong>{{ $to }}</strong> 
+            &nbsp;of&nbsp; <strong>{{ $total }}</strong>&nbsp; entries
         </div>
         <div class="col d-flex justify-content-end">
             {{ $products->links() }}
