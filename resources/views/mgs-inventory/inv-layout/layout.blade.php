@@ -36,7 +36,7 @@
         {{-- Header --}}
         @include('mgs-inventory/inv-layout/header')
 
-        <div class="content-wrapper container mt-5">
+        <div class="content-wrapper container">
             <div class="page-heading">
                 @yield('page-heading')
             </div>

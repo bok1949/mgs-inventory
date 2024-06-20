@@ -118,11 +118,3 @@
         <textarea class="form-control" rows="3" wire:model="productNote"></textarea>
     </div>
 </div>
-
-<div class="row my-3">
-    <div class="px-5">
-        <button type="button" class="btn btn-primary float-end mx-4" wire:click="createProduct">
-            Create
-        </button>
-    </div>
-</div>

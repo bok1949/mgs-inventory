@@ -1,4 +1,30 @@
 /* write your custom css here */
 .content-wrapper {
-    margin-top: 165px !important;
+    /* margin-top: 165px !important; */
+    /* position: relative; */
+    margin-top: calc(10em + 1vh);
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 600px) {
+    .content-wrapper {
+            margin-top: calc(5em + 1vh);
+        }
+}
+
+@media only screen and (max-width: 914px) and (min-width: 412px) {
+    .content-wrapper {
+        margin-top: 90px;
+    }
+}
+
+@media only screen and (max-width: 822px) and (min-width: 344px) {
+    .content-wrapper {
+        margin-top: 90px;
+    }
+}
+
+@media only screen and (max-width: 1170px) and (min-width: 670px) {
+    .content-wrapper {
+        margin-top: 90px;
+    }
 }

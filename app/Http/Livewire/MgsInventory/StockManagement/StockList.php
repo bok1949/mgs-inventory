@@ -11,9 +11,19 @@ class StockList extends Component
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
+    protected $listeners = ['reRenderParent'];
 
     public $searchProduct;
-    public $test="foobar";
+
+    public function reRenderParent()
+    {
+        $this->render();
+    }
+
+    public function openCreateStockModal()
+    {
+        $this->emit('openModalToCreateStock');
+    }
 
     public function render()
     {

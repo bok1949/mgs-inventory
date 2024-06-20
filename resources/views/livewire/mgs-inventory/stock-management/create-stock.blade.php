@@ -17,6 +17,14 @@
 
                 @include('livewire.mgs-inventory.stock-management.create-stock-form')
 
+                <div class="row my-3">
+                    <div class="px-5">
+                        <button type="button" class="btn btn-primary float-end mx-4" wire:click="createProduct">
+                            Save
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

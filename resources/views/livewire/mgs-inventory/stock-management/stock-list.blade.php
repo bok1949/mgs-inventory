@@ -17,7 +17,15 @@
             </div>
         </div>
         <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-            <button type="button" class="btn btn-primary"><i class="bi bi-plus"></i> Create Product</button>
+            <a 
+                href="#" 
+                wire:click="openCreateStockModal()" 
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#createStockModal"
+            >
+                <i class="bi bi-plus"></i> Create Product
+            </a>
         </div>
     </div>
 
@@ -68,7 +76,7 @@
                                 <th colspan="4">
                                     <div class="alert alert-warning" role="alert">
                                         No data yet! <br>
-                                        <a href="#" class="alert-link">Click here to create a Product</a>
+                                        <a href="{{ route('create-stock-index') }}" class="alert-link">Click here to create a Product</a>
                                     </div>
                                 </th>
                             </tr>
@@ -89,4 +97,7 @@
             {{ $products->links() }}
         </div>
     </div>
+
+    @livewire('mgs-inventory.stock-management.modal-create-stock')
+
 </div>
