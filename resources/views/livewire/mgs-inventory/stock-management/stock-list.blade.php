@@ -29,6 +29,37 @@
         </div>
     </div>
 
+    <div class="row mb-3 align-items-center">
+        <div class="col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
+        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 col-sm-6">
+            <div class="col-md-12">
+                <select class="form-select" wire:model="filterByCategory">
+                    <option selected>Filter by category...</option>
+                    @forelse ($categories as $category)
+                    <option value="{{$category->categoryId}}">{{ $category->category_name }}</option>
+                    @empty
+                    <option class="text-warning">
+                        No categories availabel yet...
+                    </option>
+                    @endforelse
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a href="#" wire:click="clearFilter" class="text-info">Clear filter</a>
+        </div>
+    </div>
+
+    @if ($filteredCategoryName)
+        <div class="row mb-3 align-items-center">
+            <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3"></div>
+            <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 col-sm-6">
+                <h5 class="text-center">List of {{$filteredCategoryName->category_name}}</h5>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3"></div>
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="data-table-wrapper">
