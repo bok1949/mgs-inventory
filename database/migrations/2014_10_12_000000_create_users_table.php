@@ -16,13 +16,11 @@ return new class extends Migration
             $table->unsignedBigInteger('role_id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('mobile', 15);
+            $table->string('mobile', 15)->nullable();
             $table->string('username', 125)->unique();
-            // $table->timestamp('email_verified_at')->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->dateTime('last_login');
-            // $table->rememberToken();
             $table->timestamps();
         });
     }

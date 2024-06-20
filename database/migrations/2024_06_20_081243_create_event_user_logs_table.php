@@ -11,17 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users_item_log', function (Blueprint $table) {
+        Schema::create('event_user_logs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('item_id');
-            /**
-             * eventLogs {
-             *  itemBefore: 'foo',
-             *  itemNow: 'foo bar',
-             *  action: 'edit' 
-             * }
-             */
             $table->json('log_event');
             $table->timestamps();
         });
@@ -32,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users_item_log');
+        Schema::dropIfExists('event_user_logs');
     }
 };
