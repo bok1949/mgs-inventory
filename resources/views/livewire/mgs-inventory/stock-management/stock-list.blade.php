@@ -24,36 +24,6 @@
     <div class="row">
         <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="data-table-wrapper">
-                @php
-                    $a = [
-                        'eventLogs1' => [
-                            'tableName' => 'products',
-                            'action' => 'edit',
-                            'columns' => [
-                                'column1' => [
-                                    'before' => 'foo',
-                                    'after' => 'foobar',
-                                ],
-                                'column2' => [
-                                    'before' => 'test',
-                                    'after' => 'testing',
-                                ],
-                            ]
-                        ],
-                        'eventLogs2' => [
-                            'tableName' => 'categories',
-                            'action' => 'insert',
-                            'columns' => [
-                                'column1' => 'test',
-                                'column2' => 'test2',
-                            ]
-                        ]
-                    ];
-                    $b = json_encode($a);
-                @endphp
-                
-                {{$b}}
-
                 <table class="table">
                     <thead>
                         <tr>
