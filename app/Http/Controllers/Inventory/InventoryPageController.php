@@ -25,6 +25,12 @@ class InventoryPageController extends Controller
 
     }
 
+    public function stockLevelIndex()
+    {
+        return view('mgs-inventory.stock-level-management.stockLevelIndex');
+
+    }
+
     public function categoryListIndex()
     {
         return view('mgs-inventory.category-management.categoryListIndex');
