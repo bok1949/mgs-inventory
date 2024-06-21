@@ -45,6 +45,15 @@ class StockList extends Component
         $this->emit('openModalToUpdateStock', $id);
     }
 
+    /**
+     * this will emit model ModalViewStock and show the modal
+     * to view Stock/Product
+     */
+    public function openModalToViewStock($id)
+    {
+        $this->emit('openModalToViewStock', $id);
+    }
+
     public function render()
     {
         $allProducts = Product::orderBy('product_name', 'asc')

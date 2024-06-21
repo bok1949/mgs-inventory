@@ -91,7 +91,12 @@
                                 <td>{{ $product->product_name }}</td>
                                 <td>{{ $product->description }}</td>
                                 <td>
-                                    <a href="#">
+                                    <a 
+                                        href="#"
+                                        wire:click.stop="openModalToViewStock({{$product->productId}})"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#viewStockModal"
+                                    >
                                         <i class="bi bi-eye"></i>
                                     </a> |
                                     <a 
@@ -136,5 +141,6 @@
 
     @livewire('mgs-inventory.stock-management.modal-create-stock')
     @livewire('mgs-inventory.stock-management.modal-update-stock')
+    @livewire('mgs-inventory.stock-management.modal-view-stock')
 
 </div>

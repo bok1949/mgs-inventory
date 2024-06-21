@@ -8,8 +8,11 @@
         id="updateStockModal" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Create product</h5>
+                <div class="modal-header bg-primary">
+                    <h5 class="white mx-2"><i class="bi bi-pencil-square"></i></h5>
+                    <h5 class="modal-title white">
+                        Update <span class="text-decoration-underline">{{ $productName }}</span> product
+                    </h5>
                     <button type="button" data-bs-dismiss="modal" class="btn-close" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -105,7 +108,7 @@
                 <div class="modal-footer">
                     <a href="#" data-bs-dismiss="modal" class="btn btn-secondary">Cancel</a>
                     <a href="#" class="btn btn-primary" wire:click="saveChanges">
-                        <i class="bi bi-floppy"></i> Save
+                        Save
                     </a>
                 </div>
             </div>
