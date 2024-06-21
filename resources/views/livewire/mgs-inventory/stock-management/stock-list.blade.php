@@ -94,7 +94,12 @@
                                     <a href="#">
                                         <i class="bi bi-eye"></i>
                                     </a> |
-                                    <a href="#">
+                                    <a 
+                                        href="#" 
+                                        wire:click.stop="openModalToUpdateStock({{$product->productId}})"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#updateStockModal"
+                                    >
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
                                 </td>
@@ -130,5 +135,6 @@
     </div>
 
     @livewire('mgs-inventory.stock-management.modal-create-stock')
+    @livewire('mgs-inventory.stock-management.modal-update-stock')
 
 </div>

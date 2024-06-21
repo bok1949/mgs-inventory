@@ -27,9 +27,22 @@ class StockList extends Component
         $this->render();
     }
 
+    /**
+     * this will emit model ModalCreateStock and show the modal
+     * to add Stock/Product
+     */
     public function openCreateStockModal()
     {
         $this->emit('openModalToCreateStock');
+    }
+
+    /**
+     * this will emit model ModalUpdateStock and show the modal
+     * to update Stock/Product
+     */
+    public function openModalToUpdateStock($id)
+    {
+        $this->emit('openModalToUpdateStock', $id);
     }
 
     public function render()
