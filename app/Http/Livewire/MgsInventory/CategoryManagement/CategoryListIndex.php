@@ -8,18 +8,16 @@ use Livewire\Component;
 
 class CategoryListIndex extends Component
 {
-    public $categoryId;
     
-    public function showId($id)
+    public function editCategory($id)
     {
-        $this->categoryId = $id;
+        $this->emit('showEditCategory', $id);
     }
-
+    
     public function render()
     {
         $categories = Category::all();
-        return view('livewire.mgs-inventory.category-management.category-list-index', compact('categories'))
-            ->with('id', $this->categoryId);
+        return view('livewire.mgs-inventory.category-management.category-list-index', compact('categories'));
     }
 
 }

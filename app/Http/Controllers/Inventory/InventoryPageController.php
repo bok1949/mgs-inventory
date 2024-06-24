@@ -34,4 +34,10 @@ class InventoryPageController extends Controller
     {
         return view('mgs-inventory.category-management.createCategoryIndex');
     }
+
+    // Update View
+    public function updateCategoryIndex($id)
+    {
+        return view('mgs-inventory.category-management.updateCategoryIndex', ['categoryId'=>$id]);
+    }
 }
