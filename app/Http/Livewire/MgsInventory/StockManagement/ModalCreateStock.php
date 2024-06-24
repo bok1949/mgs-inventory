@@ -5,17 +5,21 @@ namespace App\Http\Livewire\MgsInventory\StockManagement;
 use Livewire\Component;
 use App\Models\Inventory\Category;
 use App\Models\Inventory\Product;
-use Illuminate\Support\Carbon;
 use App\Models\Inventory\ProductCategory;
+use Illuminate\Support\Carbon;
 
-class CreateStock extends Component
+class ModalCreateStock extends Component
 {
+    protected $listeners = [
+        'openModalToCreateStock',
+    ];
+
     public $newCategory = false;
     public $categoryName, $categoryNote;
     public $categoryId;
     public $productCode, $productName, $productDescription, $productNote;
-    public $categoryIdRequired = false, 
-        $productNameRequired = false, 
+    public $categoryIdRequired = false,
+        $productNameRequired = false,
         $categoryNameRequired = false;
 
     public function createNewCategory()
@@ -67,6 +71,8 @@ class CreateStock extends Component
             'productNote'
         );
 
+        $this->emit('reRenderParent');
+
         session()->flash('message', 'Product created!');
     }
 
@@ -82,7 +88,7 @@ class CreateStock extends Component
         $lastInsertedProductId = $this->insertDataToProduct();
 
         $this->insertDataToProductCategories($lastInsertedProductId, $this->categoryId);
-        
+
         $this->categoryIdRequired = false;
         $this->productNameRequired = false;
         $this->newCategory = false;
@@ -94,7 +100,14 @@ class CreateStock extends Component
             'productNote'
         );
 
+        $this->emit('reRenderParent');
+
         session()->flash('message', 'Product created!');
+    }
+
+    public function openModalToCreateStock()
+    {
+        
     }
 
     public function render()
@@ -106,7 +119,7 @@ class CreateStock extends Component
             ])
             ->get();
 
-        return view('livewire.mgs-inventory.stock-management.create-stock', compact('categories'));
+        return view('livewire.mgs-inventory.stock-management.modal-create-stock', compact('categories'));
     }
 
     private function insertDataToProduct()
@@ -141,4 +154,5 @@ class CreateStock extends Component
             'created_at' => Carbon::now()
         ]);
     }
+
 }

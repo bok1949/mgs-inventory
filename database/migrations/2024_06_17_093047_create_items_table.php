@@ -16,15 +16,15 @@ return new class extends Migration
             $table->unsignedBigInteger('brand_id')->index();
             $table->foreign('brand_id')->references('id')->on('brands');
             $table->unsignedBigInteger('suplier_id')->index();
-            $table->foreign('suplier_id')->references('id')->on('suppliers');
+            $table->foreign('supplier_id')->references('id')->on('suppliers');
             $table->unsignedBigInteger('product_id')->index();
             $table->foreign('product_id')->references('id')->on('products');
-            $table->string('sku')->unique();
             $table->uuid('item_qrcode')->unique();
-            $table->double('price');
+            $table->double('price')->default(0);
             $table->smallInteger('quantity')->default(0);
             $table->smallInteger('available')->default(0);
             $table->smallInteger('defective')->default(0);
+            $table->smallInteger('unit_measurement')->nullable();
             $table->bigInteger('created_by')->index();
             $table->timestamps();
         });
