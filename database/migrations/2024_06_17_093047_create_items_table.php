@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('brand_id')->index();
             $table->foreign('brand_id')->references('id')->on('brands');
             $table->unsignedBigInteger('suplier_id')->index();
-            $table->foreign('suplier_id')->references('id')->on('suppliers');
+            $table->foreign('supplier_id')->references('id')->on('suppliers');
             $table->unsignedBigInteger('product_id')->index();
             $table->foreign('product_id')->references('id')->on('products');
             $table->uuid('item_qrcode')->unique();
