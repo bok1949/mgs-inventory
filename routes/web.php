@@ -30,6 +30,4 @@ Route::prefix('/inventory')->group(function () {
     Route::get('/category-list-index', [InventoryPageController::class, 'categoryListIndex'])->name('category-list-index');
     Route::get('/create-category-index', [InventoryPageController::class, 'createCategoryIndex'])->name('create-category-index');
     
-    // Edit Route
-    Route::get('/update-category-index/{id}', [InventoryPageController::class, 'updateCategoryIndex'])->name('update-category-index');
 });
