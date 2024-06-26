@@ -3,7 +3,7 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-					<img src="{{ URL::asset('new-assets/images/logo/logo.png')}}" alt="MSG" style="width: 8%; height: 10%;">
+					<!-- <img src="{{ URL::asset('new-assets/images/logo/logo.png')}}" alt="MSG" style="width: 8%; height: 10%;"> -->
                 </a>
             </div>
             <div class="header-top-right">

@@ -14,6 +14,11 @@ class SupplierList extends Component
     protected $paginationTheme = 'bootstrap';
 
 
+    public function openModalToUpdateSupplier($id)
+    {
+        // dd($id);
+        $this->emit('openModalToUpdateSupplier', $id);
+    }
     public function render()
     {
         $allSuppliers = Supplier::paginate(5);

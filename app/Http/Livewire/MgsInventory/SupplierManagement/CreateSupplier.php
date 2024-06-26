@@ -34,22 +34,34 @@ class CreateSupplier extends Component
     public function addSupplier()
     {
         $validatedData = $this->validate();
+        
+        $existingSupplier = Supplier::where('supplier_name', $validatedData['supplierName'])->first();
 
-        $supplier = new Supplier();
-        $supplier->supplier_name = $validatedData['supplierName'];
-        $supplier->address = $validatedData['address'];
-        $supplier->phone_number = $validatedData['cpNumber'];
-        $supplier->landline = $validatedData['landlineNumber'];
-        $supplier->created_at = Carbon::now();
-
-        if ($supplier->save()) {
-            session()->flash('success', 'Supplier added successfully!');
-            session()->flash('success_expires_at', now()->addSeconds(3));
-        } else {
-            session()->flash('fail', 'Failed to save supplier information!');
+        if ($existingSupplier) {
+            session()->flash('fail', 'Supplier with the same name already exists!');
             session()->flash('danger_expires_at', now()->addSeconds(3));
-        }
+            return redirect()->back();
+        } else { 
 
-        return redirect()->back();
+            $supplier = new Supplier();
+            $supplier->supplier_name = $validatedData['supplierName'];
+            $supplier->address = $validatedData['address'];
+            $supplier->phone_number = $validatedData['cpNumber'];
+            $supplier->landline = $validatedData['landlineNumber'];
+            $supplier->created_at = Carbon::now();
+
+            if ($supplier->save()) {
+                session()->flash('success', 'Supplier added successfully!');
+                session()->flash('success_expires_at', now()->addSeconds(3));
+            } else {
+                session()->flash('fail', 'Failed to save supplier information!');
+                session()->flash('danger_expires_at', now()->addSeconds(3));
+            }
+            $this->supplierName = '';
+            $this->address = '';
+            $this->cpNumber = null;
+            $this->landlineNumber = null;
+            return redirect()->back();
+        }
     }
 }

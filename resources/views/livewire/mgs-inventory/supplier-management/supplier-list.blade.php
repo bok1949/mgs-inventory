@@ -67,20 +67,12 @@
                                 <td>{{ $supplier->phone_number }}</td>
                                 <td>{{ $supplier->landline }}</td>
                                 <td>
-                                    {{-- <a  --}}
-                                        {{-- href="#" --}}
-                                        {{-- wire:click.stop="openModalToViewStock({{$product->productId}})" --}}
-                                        {{-- data-bs-toggle="modal" --}}
-                                        {{-- data-bs-target="#viewStockModal" --}}
-                                    {{-- > --}}
-                                        {{-- <i class="bi bi-eye"></i> --}}
-                                    {{-- </a> | --}}
                                     <a 
                                         href="#" 
-                                        {{-- wire:click.stop="openModalToUpdateSupplier({{$supplier->id}})" --}}
+                                        wire:click.stop="openModalToUpdateSupplier({{$supplier->id}})"
                                         data-bs-toggle="modal"
                                         data-bs-target="#updateSupplierModal"
-                                    >
+                                    >{{$supplier->id}}
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
                                 </td>
@@ -93,7 +85,7 @@
                                 <th colspan="4">
                                     <div class="alert alert-warning" role="alert">
                                         No data yet! <br>
-                                        <a href="" class="alert-link">Click here to create a Product</a>
+                                        <a href="{{ route('create-supplier') }}" class="alert-link">Click here to add a Supplier</a>
                                     </div>
                                 </th>
                             </tr>
