@@ -12,19 +12,28 @@ class SupplierList extends Component
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
-
-
+    public $searchSupplier;
+    protected $listeners = ['reRenderParent'];
+    
+    public function reRenderParent()
+    {
+        $this->render();
+    }
     public function openModalToUpdateSupplier($id)
     {
-        // dd($id);
         $this->emit('openModalToUpdateSupplier', $id);
     }
     public function render()
     {
-        $allSuppliers = Supplier::paginate(5);
+        $allSuppliers = Supplier::query();
 
+        if (!empty($this->searchSupplier)) {
+            $allSuppliers->orWhere('supplier_name', 'like', '%' . $this->searchSupplier . '%');
+        }
+
+        $allSupp = $allSuppliers->paginate(5);
         return view('livewire.mgs-inventory.supplier-management.supplier-list',[
-            'suppliers' => $allSuppliers,
+            'suppliers' => $allSupp,
         ]);
     }
 }

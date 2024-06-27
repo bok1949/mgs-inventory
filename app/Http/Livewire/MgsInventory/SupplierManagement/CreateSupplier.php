@@ -13,16 +13,24 @@ class CreateSupplier extends Component
     protected $rules = [
         'supplierName' => 'required|min:2|max:100',
         'address' => 'required|min:8|max:100',
-        'cpNumber' => 'required',
-        'landlineNumber' => 'required',
+        'cpNumber' => 'required_if:landlineNumber,null',
+        'landlineNumber' => 'required_if:cpNumber,null',
     ];
     //custom error message
     public function messages()
     {
         return [
+            'supplierName.required' => 'The supplier name field is required.',
+            'supplierName.min' => 'The supplier name must be at least :min characters.',
+            'supplierName.max' => 'The supplier name may not be greater than :max characters.',
+
             'address.required' => 'The address field is required.',
             'address.min' => 'The address must be at least :min characters.',
             'address.max' => 'The address may not be greater than :max characters.',
+            
+            'cpNumber.required_if' => 'The phone number field is required when landline number is not provided.',
+            'landlineNumber.required_if' => 'The landline number field is required when phone number is not provided.',
+
         ];
     }
 

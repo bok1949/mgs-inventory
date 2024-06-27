@@ -28,30 +28,6 @@
                         </div>
                     </div>
                     @endif
-                    <!-- <div class="row align-items-center my-2">
-                        <div class="col-md-3 text-end">
-                            <label for="product_code" class="col-form-label">
-                                Category
-                                <small>
-                                    <i class="bi bi-asterisk text-danger"></i>
-                                </small>
-                            </label>
-                        </div>
-                        {{-- <div class="col-md-8">
-                            <select class="form-select" wire:model="categoryId">
-                                @foreach ($categories as $category)
-                                    <option 
-                                        value="{{$category->categoryId}}" 
-                                        @if ($categoryId==$category->categoryId)
-                                        selected
-                                        @endif
-                                    >
-                                        {{ $category->category_name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div> --}}
-                    </div> -->
                     
                     <div class="row align-items-center my-2">
                         <div class="col-md-3 text-end">

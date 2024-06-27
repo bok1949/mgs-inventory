@@ -21,7 +21,7 @@ class ModalUpdateSupplier extends Component
     public function openModalToUpdateSupplier ($supplierID)
     {
         $this->supplier = Supplier::find($supplierID);
-        // dd($supplier);
+        
         $this->suppName = $this->supplier->supplier_name;
         $this->address = $this->supplier->address;
         $this->phoneNum = $this->supplier->phone_number;
@@ -35,12 +35,13 @@ class ModalUpdateSupplier extends Component
                 'supplier_name' => $this->suppName,
                 'address' => $this->address,
                 'phone_number' => $this->phoneNum,
-                'landline' => $this->suppID,
+                'landline' => $this->telNum,
                 'updated_at' => Carbon::now(),
             ]);
 
            if ($supplierUpdated) {
             session()->flash('message', 'Supplier information updated!');
+            $this->emit('reRenderParent');
            }
     }
     public function render()

@@ -24,6 +24,9 @@
             <h2 class="text-start mb-0 text-center">Fill up Supplier Information</h2>
         </div>
         <hr>
+        <div class="col-12 d-flex justify-content-end">
+            <a href="{{ route('supplier-list') }}" class="btn btn-primary me-1 mb-1">Go to supplier list</a>
+        </div>
         <div class="card-content">
             <div class="card-body">
                 <form class="form form-horizontal" wire:submit.prevent="addSupplier">
