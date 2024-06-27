@@ -21,6 +21,12 @@
                     <div class="form-control-icon">
                         <i class="bi bi-search"></i>
                     </div>
+                    @if ($searchCategory)
+                        <button type="button"
+                            class="btn position-absolute end-0 top-0 clear-button"
+                            wire:click="clearSearchInput"
+                        >×</button>
+                    @endif
                 </div>
             </div>
         </div>
@@ -55,16 +61,14 @@
                                 <td>{{ $category->category_name }}</td>
                                 <td>{{ $category->note }}</td>
                                 <td>
-                                    {{-- Action --}}
-                                    {{-- <a 
-                                        href="#"
-                                        wire:click.stop="openModalToViewStock({{$category->categoryId}})"
+                                    <a 
+                                        href="#" 
+                                        wire:click.stop="openModalToViewCategory({{$category->categoryId}})"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#viewStockModal"
+                                        data-bs-target="#viewCategoryModal"
                                     >
                                         <i class="bi bi-eye"></i>
-                                    </a> | --}}
-                                    {{-- Edit Button --}}
+                                    </a>|
                                     <a 
                                         href="#" 
                                         wire:click.stop="openModalToUpdateCategory({{$category->categoryId}})"
@@ -106,7 +110,6 @@
         </div>
     </div>
 
-    {{-- @livewire('mgs-inventory.category-management.modal-create-category') --}}
     @livewire('mgs-inventory.category-management.modal-update-category')
-    {{-- @livewire('mgs-inventory.category-management.modal-view-category') --}}
+    @livewire('mgs-inventory.category-management.modal-view-category')
 </div>

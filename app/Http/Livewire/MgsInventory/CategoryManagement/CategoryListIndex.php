@@ -26,6 +26,16 @@ class CategoryListIndex extends Component
         $this->emit('openModalToUpdateCategory', $id);
     }
 
+    public function openModalToViewCategory($id) 
+    {
+        $this->emit('openModalToViewCategory', $id);
+    }
+
+    public function clearSearchInput() 
+    {
+        $this->reset('searchCategory');
+    }
+
     public function render()
     {
         $allCategories = Category::orderBy('category_name', 'asc')
