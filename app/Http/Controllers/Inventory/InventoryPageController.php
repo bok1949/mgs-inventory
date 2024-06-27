@@ -40,4 +40,13 @@ class InventoryPageController extends Controller
     {
         return view('mgs-inventory.category-management.createCategoryIndex');
     }
+
+    public function supplierList()
+    {
+        return view('mgs-inventory.supplier-management.supplierList');
+    }
+    public function createSupplier()
+    {
+        return view('mgs-inventory.supplier-management.createSupplier');
+    }
 }
