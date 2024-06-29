@@ -76,6 +76,26 @@
                     </div>
                 </li> {{-- end of stock management --}}
 
+                {{-- Equipment management --}}
+                <li class="menu-item has-sub">
+                    <a href="#" class='menu-link'>
+                        <span><i class="bi bi-tag"></i>Equipment Management</span>
+                    </a>
+                    <div class="submenu ">
+                        <!-- Wrap to submenu-group-wrapper if you want 3-level submenu. Otherwise remove it. -->
+                        <div class="">
+                            <ul class="submenu-group">
+                                <li class="submenu-item  ">
+                                    <a href="{{ route('equipment-list-index') }}" class='subsubmenu-link'>Equipment List</a>
+                                </li>
+                                <li class="submenu-item  ">
+                                    <a href="{{ route('create-equipment-index') }}" class='subsubmenu-link'>Create Equipment</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li> {{-- end of Equipment management --}}
+
                 {{-- Brand management --}}
                 <li class="menu-item has-sub">
                     <a href="#" class='menu-link'>

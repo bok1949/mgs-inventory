@@ -10,11 +10,10 @@ class CreateCategoryIndex extends Component
 {
     public $categoryName, $categoryNote;
 
-    public $categoryNameRequired = false,
-        $categoryNoteRequired = false;
+    public $categoryNameRequired = false;
 
     public function createCategory ()
-    {
+    { 
         if (empty($this->categoryName)) {
             $this->categoryNameRequired = true;
 

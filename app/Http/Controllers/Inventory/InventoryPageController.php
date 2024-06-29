@@ -45,8 +45,19 @@ class InventoryPageController extends Controller
     {
         return view('mgs-inventory.supplier-management.supplierList');
     }
+    
     public function createSupplier()
     {
         return view('mgs-inventory.supplier-management.createSupplier');
+    }
+
+    public function equipmentListIndex()
+    {
+        return view('mgs-inventory.equipment-management.equipmentListIndex');
+    }
+
+    public function createEquipmentIndex()
+    {
+        return view('mgs-inventory.equipment-management.createEquipmentIndex');
     }
 }

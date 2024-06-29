@@ -72,8 +72,13 @@ class CreateStock extends Component
 
     public function saveProduct()
     {
-        if (empty($this->categoryId) && empty($this->productName)) {
+        if (empty($this->categoryId)) {
             $this->categoryIdRequired = true;
+
+            return;
+        }
+
+        if (empty($this->productName)) {
             $this->productNameRequired = true;
 
             return;

@@ -33,4 +33,6 @@ Route::prefix('/inventory')->group(function () {
     Route::get('/supplier-list', [InventoryPageController::class, 'supplierList'])->name('supplier-list');
     Route::get('/create-supplier', [InventoryPageController::class, 'createSupplier'])->name('create-supplier');
     
+    Route::get('/equipment-list-index', [InventoryPageController::class, 'equipmentListIndex'])->name('equipment-list-index');
+    Route::get('/create-equipment-index', [InventoryPageController::class, 'createEquipmentIndex'])->name('create-equipment-index');
 });
