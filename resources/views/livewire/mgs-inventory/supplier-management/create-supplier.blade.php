@@ -40,7 +40,7 @@
                                     <div class="position-relative">
                                         <input type="text" class="form-control" wire:model="supplierName">
                                         <div class="form-control-icon">
-                                            <i class="bi bi-person"></i>
+                                            <i class="bi bi-person-fill"></i>
                                         </div>
                                         @error('supplierName') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
@@ -56,7 +56,7 @@
                                     <div class="position-relative">
                                         <input type="text" class="form-control" wire:model="address">
                                         <div class="form-control-icon">
-                                            <i class="bi bi-person"></i>
+                                            <i class="bi bi-geo-alt-fill"></i>
                                         </div>
                                         @error('address') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
@@ -70,9 +70,9 @@
                             <div class="col-md-8">
                                 <div class="form-group has-icon-left ">
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" wire:model="cpNumber">
+                                        <input type="text" class="form-control" wire:model="cpNumber" >
                                         <div class="form-control-icon">
-                                            <i class="bi bi-person"></i>
+                                            <i class="bi bi-phone-fill"></i>
                                         </div>
                                         @error('cpNumber') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
@@ -88,7 +88,7 @@
                                     <div class="position-relative">
                                         <input type="text" class="form-control" wire:model="landlineNumber">
                                         <div class="form-control-icon">
-                                            <i class="bi bi-person"></i>
+                                            <i class="bi bi-telephone-inbound-fill"></i>
                                         </div>
                                         @error('landlineNumber') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>

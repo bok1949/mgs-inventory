@@ -13,8 +13,8 @@ class CreateSupplier extends Component
     protected $rules = [
         'supplierName' => 'required|min:2|max:100',
         'address' => 'required|min:8|max:100',
-        'cpNumber' => 'required_if:landlineNumber,null',
-        'landlineNumber' => 'required_if:cpNumber,null',
+        'cpNumber' => 'required_if:landlineNumber,null|digits:11|numeric',//mejju buggy dytoy, kitak to nu adda maymayt ikasta, ag bug nu min max mausar
+        'landlineNumber' => 'required_if:cpNumber,null|numeric',
     ];
     //custom error message
     public function messages()
@@ -30,6 +30,11 @@ class CreateSupplier extends Component
             
             'cpNumber.required_if' => 'The phone number field is required when landline number is not provided.',
             'landlineNumber.required_if' => 'The landline number field is required when phone number is not provided.',
+            'cpNumber.digits' => 'This field must not exceed :digits characters and must contain numbers only.',
+            // 'cpNumber.max' => 'The phone number exceeded :max characters.',
+            'cpNumber.numeric' => 'Only numbers allowed',
+            'landlineNumber.numeric' => 'Only numbers allowed',
+            // 'landlineNumber.min' => 'The landline number must be at least :min characters.',
 
         ];
     }
@@ -42,15 +47,14 @@ class CreateSupplier extends Component
     public function addSupplier()
     {
         $validatedData = $this->validate();
-        
         $existingSupplier = Supplier::where('supplier_name', $validatedData['supplierName'])->first();
-
+        
         if ($existingSupplier) {
             session()->flash('fail', 'Supplier with the same name already exists!');
             session()->flash('danger_expires_at', now()->addSeconds(3));
             return redirect()->back();
         } else { 
-
+            
             $supplier = new Supplier();
             $supplier->supplier_name = $validatedData['supplierName'];
             $supplier->address = $validatedData['address'];

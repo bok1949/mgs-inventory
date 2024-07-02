@@ -16,6 +16,9 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3 d-flex justify-content-end align-items-center" role="alert">
+            <a href="{{ route('create-supplier') }}" class="btn  btn-primary me-1 mb-1">Add Supplier</a>
+        </div>
     </div>
 
     <!-- <div class="row mb-3 align-items-center">
@@ -31,7 +34,6 @@
             <a href="#" wire:click="clearFilter" class="text-info">Clear filter</a>
         </div>
     </div> -->
-
 
     <div class="row">
         <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -102,6 +104,7 @@
             &nbsp;to&nbsp; <strong>{{ $to }}</strong> 
             &nbsp;of&nbsp; <strong>{{ $total }}</strong>&nbsp; entries
         </div>
+        
         <div class="col d-flex justify-content-end">
             {{ $suppliers->links() }}
         </div>
