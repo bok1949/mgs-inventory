@@ -5,6 +5,24 @@
     margin-top: calc(10em + 1vh);
 }
 
+.set-width {
+    min-width: 53rem;
+}
+
+.keep-open {
+    display: block;
+}
+
+.create-stock-level-table, 
+.create-stock-level-table td select,
+.create-stock-level-table td input {
+    font-size: .9em;
+}
+
+/* .create-stock-level-table td {
+
+} */
+
 @media only screen and (max-width: 1024px) and (min-width: 600px) {
     .content-wrapper {
             margin-top: calc(5em + 1vh);
@@ -26,5 +44,9 @@
 @media only screen and (max-width: 1170px) and (min-width: 670px) {
     .content-wrapper {
         margin-top: 90px;
+    }
+
+    .set-width {
+        min-width: 40.3rem;
     }
 }

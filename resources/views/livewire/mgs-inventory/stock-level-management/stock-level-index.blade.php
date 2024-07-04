@@ -14,8 +14,11 @@
             </div>
         </div>
         <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-            <a href="#" wire:click="openModalToAddProduct" class="btn btn-primary" data-bs-toggle="modal"
-                data-bs-target="#createStockModal">
+            <a href="#" 
+                {{-- wire:click="openModalToAddProduct"  --}}
+                class="btn btn-primary" 
+                data-bs-toggle="modal"
+                data-bs-target="#modalAddStockToStockLevel">
                 <i class="bi bi-plus"></i> Add Product
             </a>
         </div>
@@ -129,4 +132,5 @@
             {{ $productItems->links() }}
         </div>
     </div>
+    @livewire('mgs-inventory.stock-level-management.stock-level-add-product')
 </div>

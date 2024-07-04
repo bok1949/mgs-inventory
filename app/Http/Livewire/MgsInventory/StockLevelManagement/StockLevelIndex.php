@@ -9,11 +9,6 @@ class StockLevelIndex extends Component
 {
     public $searchProduct;
 
-    public function openModalToAddProduct()
-    {
-
-    }
-
     public function render()
     {
         $allProducts = Product::orderBy('product_name', 'asc')
