@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('brand_id')->index();
-            $table->unsignedBigInteger('supplier_id')->index();
-            $table->unsignedBigInteger('product_id')->index();
+            $table->unsignedBigInteger('brand_id')->index()->nullable();
+            $table->unsignedBigInteger('supplier_id')->index()->nullable();
+            $table->unsignedBigInteger('product_id')->index()->nullable();
             $table->uuid('item_qrcode')->unique();
             $table->char('price', 11)->nullable();
             $table->char('quantity', 11)->nullable();

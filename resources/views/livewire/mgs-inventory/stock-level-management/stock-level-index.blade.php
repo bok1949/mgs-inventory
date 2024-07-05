@@ -133,4 +133,23 @@
         </div>
     </div>
     @livewire('mgs-inventory.stock-level-management.stock-level-add-product')
+
+<script>
+    window.addEventListener('create-success', event => {
+        window.setTimeout(function() {
+            $(".alert-success").fadeTo(1000, 0).slideUp(1000, function(){
+                $(this).remove();
+            });
+        }, 4000);
+    });
+
+    window.addEventListener('create-error', event => {
+        alert(event.detail.error_message);
+    });
+
+    
+        
+</script>
+
+
 </div>

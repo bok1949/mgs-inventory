@@ -114,7 +114,7 @@
                             @endphp
                         @empty
                             <tr>
-                                <th colspan="4">
+                                <th colspan="5">
                                     <div class="alert alert-warning" role="alert">
                                         No data yet! <br>
                                         <a href="{{ route('create-stock-index') }}" class="alert-link">Click here to create a Product</a>
