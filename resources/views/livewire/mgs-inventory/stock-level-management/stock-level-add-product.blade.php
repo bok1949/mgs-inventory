@@ -136,16 +136,7 @@
                                             </td>
                                             <td>
                                                 <select class="form-select" wire:model.defer="selectedUnitMeasurements.{{$key}}">
-                                                    <option value="">Unit of measurement...</option>
-                                                    <option value="pc">Piece</option>
-                                                    <option value="gal">Gallon</option>
-                                                    <option value="ltr">Liter</option>
-                                                    <option value="met">Meter</option>
-                                                    <option value="kg">Kilogram</option>
-                                                    <option value="ft">Foot</option>
-                                                    <option value="drm">Drum</option>
-                                                    <option value="yd">Yard</option>
-                                                    <option value="n/a">Not applicable</option>
+                                                    @include('livewire.mgs-inventory.formselect-unit-of-measurement')
                                                 </select>
                                             </td>
                                             <td>

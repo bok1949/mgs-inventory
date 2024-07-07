@@ -73,7 +73,7 @@ class StockLevelAddProduct extends Component
 
     public function removeProductFromSelectionList($arrayKey)
     {
-        if ($arrayKey) {
+        if (!is_null($arrayKey)) {
             unset($this->productLevelItems[$arrayKey]);
         }
     }
@@ -92,6 +92,7 @@ class StockLevelAddProduct extends Component
                 'defective' => $this->defectiveStockValues[$key] ?? null,
                 'unit_measurement' => $this->selectedUnitMeasurements[$key] ?? null,
                 'specification' => $this->specificationValues[$key] ?? null,
+                'created_at' => Carbon::now(),
             ];
         }
 
@@ -105,7 +106,7 @@ class StockLevelAddProduct extends Component
             $this->dispatchBrowserEvent('error-adding-items', ['message' => $th]);
         }
         $this->cancelItemSelection();
-
+        $this->emit('reRenderParent');
     }
 
     /* saving brand in the database */
