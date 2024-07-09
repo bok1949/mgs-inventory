@@ -18,11 +18,13 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 }); */
 
+Route::get('/', [InventoryPageController::class, 'landing']);
+Route::get('/dashboard', [InventoryPageController::class, 'dashboard'])->name('dashboard');
 
-Route::get('/', [InventoryPageController::class, 'dashboard']);
 
 Route::prefix('/inventory')->group(function () {
     Route::get('/', [InventoryPageController::class, 'dashboard'])->name('invetory-dashboard');
+    Route::get('/login', [InventoryPageController::class, 'login'])->name('login');
     Route::get('/stock-list', [InventoryPageController::class, 'stockList'])->name('stock-list');
     Route::get('/create-stock', [InventoryPageController::class, 'createStock'])->name('create-stock-index');
     Route::get('/stock-level-index', [InventoryPageController::class, 'stockLevelIndex'])->name('stock-level-index');

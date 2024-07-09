@@ -7,7 +7,14 @@ use Illuminate\Http\Request;
 
 class InventoryPageController extends Controller
 {
-    
+    public function landing ()
+    {
+        return view('mgs-landing');
+    }
+    public function login ()
+    {
+        return view('mgs-inventory.inv-login.userLogin');
+    }
     public function dashboard()
     {
         // return "Testign";
