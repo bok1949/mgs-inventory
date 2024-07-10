@@ -18,7 +18,6 @@
                                         <div class="form-control-icon">
                                             <i class="bi bi-person-fill"></i>
                                         </div>
-                                        <!-- @error('supplierName') <span class="error text-danger">{{ $message }}</span> @enderror -->
                                     </div>
                                 </div>
                             </div>
