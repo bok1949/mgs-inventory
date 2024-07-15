@@ -22,7 +22,7 @@ Route::get('/', [InventoryPageController::class, 'landing']);
 Route::get('/dashboard', [InventoryPageController::class, 'dashboard'])->name('dashboard');
 
 
-Route::prefix('/inventory')->group(function () {
+Route::group(['prefix' => '/inventory', 'middleware' => 'cors'], function () {
     Route::get('/', [InventoryPageController::class, 'dashboard'])->name('invetory-dashboard');
     Route::get('/login', [InventoryPageController::class, 'login'])->name('login');
     Route::get('/stock-list', [InventoryPageController::class, 'stockList'])->name('stock-list');
@@ -34,7 +34,7 @@ Route::prefix('/inventory')->group(function () {
 
     Route::get('/supplier-list', [InventoryPageController::class, 'supplierList'])->name('supplier-list');
     Route::get('/create-supplier', [InventoryPageController::class, 'createSupplier'])->name('create-supplier');
-    
+
     Route::get('/equipment-list-index', [InventoryPageController::class, 'equipmentListIndex'])->name('equipment-list-index');
     Route::get('/create-equipment-index', [InventoryPageController::class, 'createEquipmentIndex'])->name('create-equipment-index');
 });

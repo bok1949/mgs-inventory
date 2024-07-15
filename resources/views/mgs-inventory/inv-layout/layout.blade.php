@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inventory</title>
-    {{-- bootstrap link --}}
-
-    {{-- css layout --}}
-    {{-- css natin --}}
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    
-    {{--  <link rel="stylesheet" href="./assets/compiled/css/app.css">
-    <link rel="stylesheet" href="./assets/compiled/css/iconly.css"> --}}
     
     <link rel="stylesheet" href="{{ URL::asset('new-assets/compiled/css/app.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('new-assets/compiled/css/iconly.css')}}">
@@ -60,20 +53,18 @@
 
     @livewireScripts
 
+    <script>
+        Livewire.onPageExpired((response, message) => {})
+    </script>
+
     {{-- JavaScript --}}
     <script src="{{ URL::asset('new-assets/extensions/jquery/jquery.min.js')}}"></script>
-    {{-- <script src="{{ URL::asset('assets/static/js/components/dark.js')}}"></script> --}}
     <script src="{{ URL::asset('new-assets/static/js/pages/horizontal-layout.js')}}"></script>
     <script src="{{ URL::asset('new-assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{ URL::asset('new-assets/extensions/toastify-js/src/toastify.js')}}"></script>
     
-    
     <script src="{{ URL::asset('new-assets/compiled/js/app.js')}}"></script>
     
-
-
-    <!-- Need: Apexcharts -->
-    {{-- <script src="assets/extensions/apexcharts/apexcharts.min.js"></script> --}}
     <script src="{{ URL::asset('new-assets/static/js/pages/dashboard.js')}}"></script>
     <script src="{{ URL::asset('new-assets/bootstrap.bundle.min.js')}}"></script>
 
