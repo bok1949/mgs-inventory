@@ -34,7 +34,7 @@
                             <label for="product_code" class="col-form-label">Supplier Name</label>
                         </div>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" wire:model="suppName" />
+                            <input type="text" class="form-control" wire:model.defer="suppName" />
                         </div>
                     </div>
                     
@@ -45,7 +45,7 @@
                             </label>
                         </div>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" wire:model="address" />
+                            <input type="text" class="form-control" wire:model.defer="address" />
                         </div>
                     </div>
                     
@@ -54,7 +54,7 @@
                             <label for="description" class="col-form-label">Phone Number</label>
                         </div>
                         <div class="col-md-8">
-                        <input type="text" class="form-control" wire:model="phoneNum" />
+                        <input type="text" class="form-control" wire:model.defer="phoneNum" />
                         </div>
                     </div>
                     
@@ -63,7 +63,7 @@
                             <label for="note" class="col-form-label">Landline</label>
                         </div>
                         <div class="col-md-8">
-                        <input type="text" class="form-control" wire:model="telNum" />
+                        <input type="text" class="form-control" wire:model.defer="telNum" />
                         </div>
                     </div>
                 </div>

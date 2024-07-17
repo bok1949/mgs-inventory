@@ -66,8 +66,8 @@
                                 <td>{{ $counter }}</td>
                                 <td>{{ $supplier->supplier_name }}</td>
                                 <td>{{ $supplier->address }}</td>
-                                <td>{{ $supplier->phone_number }}</td>
-                                <td>{{ $supplier->landline }}</td>
+                                <td>{{ $supplier->phone_number !== 0 ? $supplier->phone_number : 'Not provided' }}</td>
+                                <td>{{ $supplier->landline !== '0' ? $supplier->landline : 'Not provided' }}</td>
                                 <td>
                                     <a 
                                         href="#" 
