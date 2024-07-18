@@ -9,7 +9,8 @@
                         type="text" 
                         class="form-control" 
                         placeholder="Search product name..."
-                        wire:model.debounce.3000="searchProduct">
+                        wire:model.lazy="searchProduct"
+                    >
                     <div class="form-control-icon">
                         <i class="bi bi-search"></i>
                     </div>
