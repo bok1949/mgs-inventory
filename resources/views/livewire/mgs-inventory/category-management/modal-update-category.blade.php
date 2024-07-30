@@ -41,7 +41,7 @@
                             <input 
                                 type="text" 
                                 class="form-control {{$categoryNameRequired ? 'is-invalid' : ''}}" 
-                                wire:model="categoryName"
+                                wire:model.lazy="categoryName"
                             >
                             @if ($categoryNameRequired)
                                 <div class="invalid-feedback">
@@ -56,7 +56,7 @@
                             <label for="note" class="col-form-label">Note</label>
                         </div>
                         <div class="col-md-8">
-                            <textarea class="form-control" rows="3" wire:model="categoryNote">
+                            <textarea class="form-control" rows="3" wire:model.lazy="categoryNote">
                             </textarea>
                         </div>
                     </div>

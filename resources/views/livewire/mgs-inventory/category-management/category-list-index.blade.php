@@ -16,7 +16,7 @@
                         type="text" 
                         class="form-control" 
                         placeholder="Search category name..."
-                        wire:model.debounce.3000="searchCategory"
+                        wire:model.lazy="searchCategory"
                     >
                     <div class="form-control-icon">
                         <i class="bi bi-search"></i>
@@ -87,7 +87,7 @@
                                 <th colspan="4">
                                     <div class="alert alert-warning" role="alert">
                                         No result! <br>
-                                        <a href="{{ route('create-category-index') }}" class="alert-link">Click here to create a Product</a>
+                                        <a href="{{ route('create-category-index') }}" class="alert-link">Click here to create a Category</a>
                                     </div>
                                 </th>
                             </tr>
